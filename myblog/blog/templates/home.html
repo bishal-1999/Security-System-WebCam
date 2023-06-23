@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+<h2>welcome {{full_name}}</h2>
+<h1>This Is A Home Page</h1>
+<ul>
+    <a href="{% url 'blog:myview'%}"><li>option 1</li></a>
+    <a href="{% url 'blog:home'%}"><li>option 2</li></a>
+    <a href="{% url 'blog:home'%}"><li>option 3</li></a>
+    <a href="{% url 'blog:home'%}"><li>option 4</li></a>
+</ul>
+{% endblock%}

@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+<div>
+ <h3>Login Page</h3> 
+ <form action="" method="post" novalidate>
+   {% csrf_token %}
+   {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+     <p >invalid username or password</p>
+    {% endfor %}
+   {% endif %}
+   {% for fm in form %}
+    <div class="form-group">
+    {{fm.label_tag}} {{fm}} <small>{{fm.errors|striptags}}</small>
+    <br><br>
+    </div>
+   {% endfor %}
+   <input type="submit"  value="Login">
+   <input type="reset" value="clear">
+  </form>
+</div>
+
+{% endblock content %}

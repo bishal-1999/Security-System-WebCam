@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div>
+ <h3>Become an Author</h3> 
+ {% if messages %}
+ {% for message in messages %}
+  <p>{{message}}</p>
+ {% endfor %}
+ {% endif %}
+ <form action="" method="post" novalidate>
+  {% csrf_token %}
+  {% for fm in form %}
+   <div>
+   {{fm.label_tag}} {{fm}} <small>{{fm.errors|striptags}}</small>
+   <br><br>
+   </div>
+  {% endfor %}
+  <input type="submit" value="Submit">
+  <input type="reset" value="clear">
+  {% if form.non_field_errors %}
+   {% for error in form.non_field_errors %}
+    <p>{{error}}</p>
+   {% endfor %}
+  {% endif %}
+ </form>
+</div>
+
+{% endblock content %}

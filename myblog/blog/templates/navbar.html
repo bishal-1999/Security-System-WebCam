@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nav a
+    {
+        margin-left: 2%;
+    }
+</style>
+<body>
+    <div class="nav">
+        <a href="{% url 'blog:home'%}">home</a>
+        <a href="{% url 'blog:logout'%}">logout</a>
+        <a href="{% url 'blog:welcome'%}">welcome</a>
+        <a href="{% url 'blog:signup'%}">signup</a>
+        <a href="{% url 'blog:login'%}">login</a>
+    </div>
+</body>
+</html>
